@@ -15,7 +15,6 @@ namespace TaskJGarant.Models
         public DbSet<LegalPerson> LegalPeople { get; set; }
         public DbSet<Person> People { get; set; }
 
-        public DbSet<Contact> ContactPeople { get; set; }
 
     }
 }

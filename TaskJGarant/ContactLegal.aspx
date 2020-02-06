@@ -1,4 +1,4 @@
-﻿<%--VARIANT WITH GRID, WASN'T REALLY USEFUL--%>
+﻿
 
 
 <%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" 

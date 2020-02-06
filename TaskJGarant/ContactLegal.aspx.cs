@@ -18,22 +18,16 @@ namespace TaskJGarant
         }
         public IQueryable<PhysPerson> legalContact_GetData([QueryString] int? legPersonID)
         {
-            var db = new ContragentContext();
-            var q = db.PhysPeople;
-            var quer = db.ContactPeople;
+            var _db = new ContragentContext();
+            
 
-            //var qq =   (quer.Where(p => p.LegalPersonID == legPersonID) as Contact)
-            //    .PhysPersonContacts as IQueryable<PhysPerson>;
-
-            //    var query = db.ContactPeople.Where(e=>e.ID==q)
-            //    //    .Where(e => e.LegalPersonID == legPersonID);
-
-            //var q = from s in quer select s.PhysPersonContacts;
-                
-                return q;
-          
-            //IQueryable < PhysPerson > query = quer.FirstOrDefault().PeopleContacts as IQueryable<PhysPerson>;
-            //return query;
+            IQueryable<PhysPerson> query = _db.PhysPeople;
+            if (legPersonID.HasValue && legPersonID > 0)
+            {
+                query = query.Where(p => p.LegPersonID == legPersonID);
+            }
+            return query;
+            
 
         }
      

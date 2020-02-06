@@ -13,10 +13,37 @@ namespace TaskJGarant.Models
         {
             GetPhysPeople().ForEach(c => context.PhysPeople.Add(c));
             GetLegalPeople().ForEach(c => context.LegalPeople.Add(c));
-            GetContactPeople().ForEach(c => context.ContactPeople.Add(c));
+           // GetContactPeople().ForEach(c => context.ContactPeople.Add(c));
             
         }
+        private static List<LegalPerson> GetLegalPeople()
+        {
+            var legalPeople = new List<LegalPerson> {
+                new LegalPerson
+                {
 
+                    Identificator = "time",
+                    Iin_bin="960000000005",
+                    AuthorName="Ayau",
+                    TitleName="icg-agro company"
+
+                    }
+               ,
+               new LegalPerson
+                {
+
+                    Identificator = "fine",
+                    Iin_bin="911111111111",
+                    AuthorName="Lara",
+                    TitleName="JysanGarant"
+
+                }
+
+            };
+
+
+            return legalPeople;
+        }
         private static List<PhysPerson> GetPhysPeople()
         {
             var physPeople = new List<PhysPerson> {
@@ -27,8 +54,10 @@ namespace TaskJGarant.Models
                     Iin_bin="960722401059",
                     AuthorName="Ayaulym",
                     FirstName="Damira",
-                    ContactID=1
-                    
+                    LastName="Mukhametkali",
+                    MiddleName="Kairatkyzy",
+                    LegPersonID=5
+
                }
                 ,
                new PhysPerson
@@ -38,7 +67,9 @@ namespace TaskJGarant.Models
                     Iin_bin="950722401059",
                     AuthorName="Anel",
                     FirstName="Salamat",
-                    ContactID=2
+                    LastName="Ibrayev",
+                    MiddleName="Askarovich",
+                    LegPersonID=6
                  },
                new PhysPerson
                 {
@@ -46,8 +77,10 @@ namespace TaskJGarant.Models
                     Identificator = "Stars",
                     Iin_bin="940722401059",
                     FirstName="Sam",
-                    ContactID=3,
                     AuthorName="Gulya",
+                    LastName="Bolatzhan",
+                    MiddleName="Samatuly",
+                    LegPersonID=5
 
                 },
                 new PhysPerson
@@ -57,70 +90,43 @@ namespace TaskJGarant.Models
                     Iin_bin="920722401059",
                     AuthorName="Ayaulym",
                     FirstName="Azamat",
-                    ContactID=1
-                },
-            }
-        ;
+                    LastName="Boran",
+                    MiddleName="Zhaskanuly",
+                    LegPersonID=6
+                } };
+        
 
             return physPeople;
         }
 
         
 
-        private static List<LegalPerson> GetLegalPeople()
-        {
-            var legalPeople = new List<LegalPerson> {
-                new LegalPerson
-                {
+        
+        //private static List<Contact> GetContactPeople()
+        //{
+        //    var contactPeople = new List<Contact> {
+        //        new Contact
+        //        {
+        //            ID=3
+        //        },
+        //       new Contact
+        //        {
+        //           ID=2
 
-                    Identificator = "time",
-                    Iin_bin="960000000005",
-                    AuthorName="Ayau",
-                    ContactID=2,
-                    TitleName="icg-agro company",
-                    }
-               ,
-               new LegalPerson
-                {
+        //        },
+        //        new Contact
+        //        {
+        //           ID=1
 
-                    Identificator = "fine",
-                    Iin_bin="911111111111",
-                    AuthorName="Lara",
-                    ContactID=3,
-                    TitleName="JysanGarant"
-
-                }
-
-            };
-            
-
-            return legalPeople;
-        }
-        private static List<Contact> GetContactPeople()
-        {
-            var contactPeople = new List<Contact> {
-                new Contact
-                {
-                    ID=3
-                },
-               new Contact
-                {
-                   ID=2
-
-                },
-                new Contact
-                {
-                   ID=1
-
-                }
+        //        }
 
 
 
 
-            };
+        //    };
 
-            return contactPeople;
-        }
+        //    return contactPeople;
+        //}
     }
 
 }

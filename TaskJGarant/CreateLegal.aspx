@@ -62,16 +62,7 @@
             </tr>
               
             <tr>
-              <td>
-                <b><asp:Label runat="server" 
-                  AssociatedControlID="legContactInsertTextBox" 
-                  Text="Contact Id:" />:</b>
-              </td>
-              <td>
-                <asp:textbox id="legContactInsertTextBox"
-                  text='<%# Bind("ContactID") %>'
-                  runat="server"/> 
-              </td>
+              
             </tr>
             <tr>
               <asp:Button runat="server" Text="Insert" CommandName="Insert" />

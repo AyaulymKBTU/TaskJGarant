@@ -17,9 +17,7 @@ namespace TaskJGarant.Models
         public string AuthorName { get; set; }
         public DateTimeOffset UpdateDate { get; set; }
         public string UpdaterName { get; set; }
-        public int ContactID { get; set ; }
-
-        public virtual Contact Contact { get; set; }
+       
 
 
     }

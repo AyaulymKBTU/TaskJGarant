@@ -41,7 +41,7 @@ namespace TaskJGarant
                       String.Format("Item with id {0} was not found", leg_personID));
                     return;
                 }
-
+                item.UpdateDate = new DateTimeOffset(DateTime.Now);
                 TryUpdateModel(item);
                 if (ModelState.IsValid)
                 {

@@ -1,21 +1,33 @@
 ﻿<%@ Page Title="Legal Person List" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" 
     CodeBehind="LegalsList.aspx.cs" Inherits="TaskJGarant.LegalsList" %>
 
-<%--VARIANT WITH GRID, WASN'T REALLY USEFUL--%>
 
-<%--<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+            <div>
+                 <asp:textbox id="SearchLegalPersonTextBox" text=''  runat="server"/>
+                 <asp:Button runat="server" onClick="NavigateToSearchResults" Text="Search by BIN" />
+            </div>
+                <br />
+    <div>
+              <asp:HyperLink NavigateUrl="~/CreateLegal" Text="Add New" runat="server" />
+            </div>
     <asp:GridView runat="server" ID="legalsGrid"
         ItemType="TaskJGarant.Models.LegalPerson" SelectMethod="GetLPPeople" DataKeyNames="ID" 
         
         AutoGenerateColumns="false">
         <Columns>
             <asp:DynamicField DataField="ID" />
-            <asp:DynamicField DataField="TitleName" />         
+            <asp:DynamicField DataField="TitleName" />    
+            <asp:DynamicField DataField="Iin_bin" />   
             <asp:HyperLinkField Text="Contacts" DataNavigateUrlFormatString="~/ContactLegal.aspx?legPersonID={0}"
-    DataNavigateUrlFields="ID" />     
+    DataNavigateUrlFields="ID" />  
+            <asp:HyperLinkField Text="Update" DataNavigateUrlFormatString="~/LegPeopleDetails.aspx?legPersonID={0}"
+    DataNavigateUrlFields="ID" /> 
+              
         </Columns>
     </asp:GridView>
-</asp:Content>--%>
+</asp:Content>
 
 
 
@@ -26,7 +38,7 @@
 
 
 
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<%--<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <section>
         <div>
             <hgroup>
@@ -92,4 +104,4 @@
     </section>
 </asp:Content>
 
-
+--%>
